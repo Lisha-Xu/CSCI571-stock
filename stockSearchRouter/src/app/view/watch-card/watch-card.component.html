@@ -1,0 +1,26 @@
+<div class="card" [routerLink]="['/details/'+allInfo['ticker']]">
+  <div class="card-body">
+    <button style="position: relative; right: 0; top: 0;" type="button" class="close" aria-label="Close" (click)="remove()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <div class="row firstRow">
+      <div class="col text-left">{{allInfo['ticker']}}</div>
+      <div *ngIf="allInfo['change']>0;" style="color: rgb(43,127,2); " class="col text-right">{{allInfo['last']}}</div>
+      <div *ngIf="allInfo['change']<0;" style="color: rgb(243,17,0)" class="col text-right">{{allInfo['last']}}</div>
+    </div>
+    <div class="row secondRow">
+      <div class="col text-left">{{allInfo['name']}}</div>
+      <div *ngIf="allInfo['change']>0;" style="color: rgb(43,127,2);padding-left: 0" class="col text-right">
+        <div><img class="arrowIcon" src="assets/icons/upArrow.svg">{{allInfo['change']}}({{allInfo['changePercent']}}%)</div>
+      </div>
+      <div *ngIf="allInfo['change']<0;" style="color: rgb(243,17,0); padding-left: 0" class="col text-right">
+        <div><img class="arrowIcon" src="assets/icons/downArrow.svg">{{allInfo['change']}}({{allInfo['changePercent']}}%)</div>
+      </div>
+      <div *ngIf="allInfo['change']==0;" style="color: black; padding-left: 0" class="col text-right">
+        <div>{{allInfo['change']}}({{allInfo['changePercent']}}%)</div>
+      </div>
+    </div>
+  </div>
+
+</div>

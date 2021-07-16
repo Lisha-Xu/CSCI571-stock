@@ -1,0 +1,32 @@
+.modal-title{
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.publishTime{
+  color: rgb(111, 118, 126);
+}
+
+.title{
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+}
+
+p{
+  margin-bottom: 0;
+  line-height: normal;
+}
+
+.content{
+  font-size: 16px;
+  line-height: normal;
+}
+
+.link{
+  font-size: 14px;
+  line-height: normal;
+  color: rgb(117, 124, 132);
+}

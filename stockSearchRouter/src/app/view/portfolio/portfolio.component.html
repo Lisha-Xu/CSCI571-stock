@@ -1,0 +1,16 @@
+<div id="container" >
+  <div class="main col-md-9 col-12">
+    <h1>My Portfolio</h1>
+    <mat-spinner *ngIf="showSpinner" [diameter]="60" style="margin: 3% auto"></mat-spinner>
+    <div style="flex: 1 0 auto;" *ngIf="showSpinner"></div>
+    <div *ngIf="showSpinner==false">
+      <div *ngIf="emptyFlag == 0" class="alert alert-warning text-center" role="alert">
+        <p>Currently you don't have any stock.</p>
+      </div>
+      <div *ngFor="let item of myPortfolio">
+        <app-portfolio-card [allInfo]="item[0]" [savedInfo] = "item[1]" (sendToParent)="getData(item)" (close)="onElementDeleted(item)"></app-portfolio-card>
+      </div>
+    </div>
+  </div>
+  <footer class="footer text-center"><p>Powered By Tiingo. Developed by Lisha Xu.</p></footer>
+</div>

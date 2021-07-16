@@ -1,0 +1,31 @@
+.card{
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.card-body{
+  padding-top: 0;
+  padding-right: 5px;
+  padding-left: 20px;
+}
+
+.firstRow{
+  margin-right: 5px;
+  font-family: "Lucida Grande", sans-serif;
+  margin-top: 30px;
+  font-size: 2em;
+  font-weight: bold;
+}
+.secondRow{
+  margin-right: 5px;
+  font-family: "Lucida Grande", sans-serif;
+  margin-top: 20px;
+  font-size: 1.16em;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.arrowIcon{
+  position: relative;
+  bottom: 1px;
+  margin-right: 4px;
+}

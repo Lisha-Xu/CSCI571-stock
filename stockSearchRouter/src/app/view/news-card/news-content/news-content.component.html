@@ -1,0 +1,33 @@
+
+<div class="modal-header">
+  <table>
+    <tr class="modal-title">{{news.sourceNew}}</tr>
+    <tr class="publishTime">{{news.publishedAt}}</tr>
+  </table>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body" ngbautofocus="">
+  <div class="title">{{news.title}}</div>
+  <p class="content">{{news.description}}</p>
+  <p class="link">For more details click <a target="_blank" href="{{news.url}}">here</a> </p>
+  <div class="card bg-white" style="margin-top: 10%">
+   <div class="card-body">
+     <p>Share</p>
+    <div class="row" style="margin-top: 3%;">
+      <a style="margin-left:3%" class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text={{news.title}}&url={{news.url}}" >
+        <img width="40px" src="assets/icons/twitter.svg">
+      </a>
+      <div class="fb-share-button">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{news.url}};src=sdkpreparse" class="fb-xfbml-parse-ignore">
+          <img width="40px" src="assets/icons/facebook.svg">
+        </a>
+      </div>
+    </div>
+   </div>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,32 @@
+<div class="card" style="width: 100%">
+  <div class="card-header" [routerLink]="['/details/'+allInfo['ticker']]">
+    <span class="title">{{savedInfo['ticker']}}</span><span class="name">{{savedInfo['name']}}</span>
+  </div>
+  <div class="card-body row justify-content-between">
+    <table class="col-12 col-md-6">
+      <tr><td>Quantity:</td><td class="text-right">{{savedInfo['quantity']}}</td></tr>
+      <tr><td>Avg. Cost / Share:</td><td class="text-right">{{average}}</td></tr>
+      <tr><td>Total Cost:</td><td class="text-right">{{savedInfo['totalCost'] }}</td></tr>
+    </table>
+    <table class="col-12 col-md-6" *ngIf="change > 0">
+      <tr><td>Change:</td><td class="text-right" style="color: rgb(71,146,70);"><img class="arrowIcon" src="assets/icons/upArrow.svg">{{change}}</td></tr>
+      <tr><td>Current Price:</td><td class="text-right" style="color: rgb(71,146,70);">{{allInfo['last']}}</td></tr>
+      <tr><td>Market Value:</td><td class="text-right" style="color: rgb(71,146,70); ">{{marketValue}}</td></tr>
+    </table>
+    <table class="col-12 col-md-6" *ngIf="change < 0">
+      <tr><td>Change:</td><td class="text-right" style="color: red;"><img class="arrowIcon" src="assets/icons/downArrow.svg">{{change}}</td></tr>
+      <tr><td>Current Price:</td><td class="text-right" style="color: red;">{{allInfo['last']}}</td></tr>
+      <tr><td>Market Value:</td><td class="text-right" style="color: red;">{{marketValue}}</td></tr>
+    </table>
+    <table class="col-12 col-md-6" *ngIf="change == 0">
+      <tr><td>Change:</td><td class="text-right">{{change}}</td></tr>
+      <tr><td>Current Price:</td><td class="text-right ">{{allInfo['last']}}</td></tr>
+      <tr><td>Market Value:</td><td class="text-right">{{marketValue}}</td></tr>
+    </table>
+  </div>
+  <div class="card-footer text-right">
+    <button class="btn btn-primary" (click)="openModal('buy')">Buy</button>
+    <button class="btn btn-danger" (click)="openModal('sell')">Sell</button>
+  </div>
+
+</div>

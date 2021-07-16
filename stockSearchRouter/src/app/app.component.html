@@ -1,0 +1,19 @@
+<div>
+<nav class="navbar navbar-expand-sm navbar-dark sticky-top" id="navBar">
+  <a class="navbar-brand nav-title" [routerLink]="['/']">Stock Search</a>
+  <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#shownav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="shownav" class="collapse navbar-collapse justify-content-end">
+    <ul class="nav navbar-nav col-lg-4 col-md-6 col-12 justify-content-end">
+      <li class="nav-item col-lg-2 col-md-4 d-none d-md-block d-lg-block text-center" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="router-link-active" [routerLink]="['/']" [routerLinkActive]="['active']">Search</li>
+      <li class="nav-item col-lg-2 col-md-4 d-none d-md-block d-lg-block text-center" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActive]="['active']" [routerLink]="['/watchlist']" routerLinkActive="router-link-active">Watchlist</li>
+      <li class="nav-item col-lg-2 col-md-4 d-none d-md-block d-lg-block text-center" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActive]="['active']" [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Portfolio</li>
+      <li class="nav-item col-12 d-block d-md-none d-lg-none" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="router-link-active" [routerLink]="['/']" [routerLinkActive]="['active']">Search</li>
+      <li class="nav-item col-12 d-block d-md-none d-lg-none" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActive]="['active']" [routerLink]="['/watchlist']" routerLinkActive="router-link-active">Watchlist</li>
+      <li class="nav-item col-12 d-block d-md-none d-lg-none" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActive]="['active']" [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Portfolio</li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+</div>

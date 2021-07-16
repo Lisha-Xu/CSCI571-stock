@@ -1,0 +1,12 @@
+<div class="card bg-light" (click)="open()">
+  <div class="row" style="height: 100%">
+    <div class="pictureBox col-md-4 col-12">
+      <img src="{{news.urlToImage}}" alt="News Image">
+<!--      <div style="height: 5px; width:100% " class="d-none d-md-block d-lg-block"></div>-->
+    </div>
+    <div class="card-body col-md-8 col-12" >
+      <div class="d-none d-md-block d-lg-block">{{news.title}}</div>
+      <div class="d-sm-block d-md-none d-lg-none" style="margin-left: 35px; margin-right: 15px">{{news.title}}</div>
+    </div>
+  </div>
+</div>

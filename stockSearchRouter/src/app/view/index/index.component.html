@@ -1,0 +1,24 @@
+<!--<p>index works!</p>-->
+<div id="container">
+  <div class="searchPage text-center main">
+    <div class="col-md d-none d-md-block d-lg-block"><h1>STOCK SEARCH</h1></div>
+    <div class="col-sm d-block d-md-none d-lg-none firstTitle"><h1>STOCK</h1></div>
+    <div class="col-sm d-block d-md-none d-lg-none"><h1>SEARCH</h1></div>
+    <form>
+      <label for="searchValue"></label>
+      <mat-form-field class="formClass" appearance="standard">
+        <input matInput [formControl]="searchValue" (keyup)="getData(searchValue.value)" type="text" [matAutocomplete]="auto" id="searchValue" placeholder="Enter stock name">
+        <img class="imgButton" src="assets/icons/search.svg" *ngIf="searchValue.value ==''">
+        <img class="imgButton" *ngIf="searchValue.value !=''" [routerLink]="['/details/'+searchValue.value]" routerLinkActive="router-link-active" src="assets/icons/search.svg">
+      </mat-form-field>
+      <mat-autocomplete #auto="matAutocomplete" [panelWidth]="200">
+        <mat-option *ngIf="showSpinner==1" ><mat-spinner [diameter]="50"></mat-spinner></mat-option>
+        <div *ngIf="showSpinner==2">
+          <mat-option *ngFor="let option of data" [value]="option['ticker']" ><span class="firstValue">{{option['ticker']}}</span> &nbsp;<span class="secondValue">| {{option['name']}}</span></mat-option></div>
+      </mat-autocomplete>
+    </form>
+  </div>
+  <footer class="footer text-center"><p>Powered By Tiingo. Developed by Lisha Xu.</p></footer>
+</div>
+<router-outlet></router-outlet>
+

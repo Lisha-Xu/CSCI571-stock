@@ -1,0 +1,136 @@
+<div id="container">
+  <mat-spinner *ngIf="showSpinner" [diameter]="60" style="margin: 40px auto"></mat-spinner>
+  <div class="alert alert-danger noResult text-center col-lg-9 col-md-10 col-10" role="alert" *ngIf="allInfo==null" >
+    No results found. Please enter valid Ticker
+  </div>
+  <div style="flex: 1 0 auto;" *ngIf="allInfo==null || showSpinner"></div>
+
+<div *ngIf="showSpinner==false && allInfo!= null" class="details col-lg-9 col-md-10 col-12">
+  <div class="stockDetails">
+    <div *ngIf="changeWatchFlag==1" class="alert alert-success" role="alert">
+      {{allInfo['ticker']}} added to Watchlist.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div *ngIf="changeWatchFlag==2" class="alert alert-danger" role="alert">
+      {{allInfo['ticker']}} removed from Watchlist.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div *ngIf="buyFlag==1" class="alert alert-success" role="alert">
+      {{allInfo['ticker']}} bought successfully!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="row firstRow">
+      <div class="col text-left">
+        {{allInfo['ticker']}}
+        <img class="starIcon" *ngIf="watchFlag==false" (click)="setWatchList()" src="assets/icons/star.svg">
+        <img class="starIcon" *ngIf="watchFlag==true" (click)="setWatchList()" src="assets/icons/starFill.svg">
+      </div>
+      <div *ngIf="allInfo['change']>0;" style="color: rgb(43,127,2)" class="col text-right">{{allInfo['last']}}</div>
+      <div *ngIf="allInfo['change']<0;" style="color: rgb(243,17,0)" class="col text-right">{{allInfo['last']}}</div>
+    </div>
+    <div class="row secondRow">
+      <div class="col text-left">{{allInfo['name']}}</div>
+      <div *ngIf="allInfo['change']>0;" style="color: rgb(43,127,2)" class="col text-right">
+        <div class="d-none d-md-block d-lg-block"><img class="arrowIcon" src="assets/icons/upArrow.svg">&nbsp;{{allInfo['change']}}&nbsp;({{allInfo['changePercent']}}%)</div>
+        <div class="d-block d-md-none d-lg-none"><img class="arrowIcon" src="assets/icons/upArrow.svg">&nbsp;{{allInfo['change']}}</div>
+        <div class="d-block d-md-none d-lg-none">({{allInfo['changePercent']}}%)</div>
+
+      </div>
+      <div *ngIf="allInfo['change']<0;" style="color: rgb(243,17,0)" class="col text-right">
+        <div class="d-none d-md-block d-lg-block"><img class="arrowIcon" src="assets/icons/downArrow.svg">&nbsp;{{allInfo['change']}}({{allInfo['changePercent']}}%)</div>
+        <div class="d-block d-md-none d-lg-none"><img class="arrowIcon" src="assets/icons/downArrow.svg">&nbsp;{{allInfo['change']}}</div>
+        <div class="d-block d-md-none d-lg-none">({{allInfo['changePercent']}}%)</div>
+
+      </div>
+      <div *ngIf="allInfo['change']==0;" style="color: black" class="col text-right">
+        <div class="d-none d-md-block d-lg-block">{{allInfo['change']}}({{allInfo['changePercent']}}%)</div>
+        <div class="d-sm-block d-md-none d-lg-none">{{allInfo['change']}}</div>
+        <div class="d-sm-block d-md-none d-lg-none">({{allInfo['changePercent']}}%)</div>
+
+      </div>
+    </div>
+    <div class="row thirdRow">
+      <div class="col text-left">{{allInfo['exchangeCode']}}</div>
+      <div class="col text-right">{{curTime}}</div>
+    </div>
+    <div class="row">
+      <div class="col text-left"><button class="btn btn-success" (click)="open()">Buy</button></div>
+    </div>
+    <div class="row">
+      <div *ngIf="allInfo['flag']" class="marketStatusGreen"><p class="marketStatus">Market is Open</p></div>
+      <div *ngIf="allInfo['flag']==false" class="marketStatusRed"><p class="marketStatus">Market Closed on {{allInfo['timestamp']}}</p></div>
+    </div>
+  </div>
+
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Summary">
+      <ng-template matTabContent>
+      <div class="general row">
+        <div class="col-md-6">
+          <div class="row tableArea">
+            <div class="col-md-1 d-none d-md-block d-lg-block"></div>
+            <table class="col-md-3 col-6 text-left">
+              <tr><td class="nomalValue">High Price:</td><td>{{allInfo['high']}}</td></tr>
+              <tr><td class="nomalValue">Low Price:</td><td>{{allInfo['low']}}</td></tr>
+              <tr><td class="nomalValue">Open Price:</td><td>{{allInfo['open']}}</td></tr>
+              <tr><td class="nomalValue">Prev. Close:</td><td>{{allInfo['prevClose']}}</td></tr>
+              <tr><td class="nomalValue">Volume:</td><td>{{allInfo['volume']}}</td></tr>
+            </table>
+            <div class="col-md-1 d-none d-md-block d-lg-block"></div>
+            <table class="col-md-3 col-6 text-left" *ngIf="allInfo['flag']">
+              <tr><td class="openValue">Mid Price:</td><td>{{allInfo['mid']}}</td></tr>
+              <tr><td class="openValue">Ask Price:</td><td>{{allInfo['askPrice']}}</td></tr>
+              <tr><td class="openValue">Ask Size:</td><td>{{allInfo['askSize']}}</td></tr>
+              <tr><td class="openValue">Bid Price:</td><td>{{allInfo['bidPrice']}}</td></tr>
+              <tr><td class="openValue">Bid Size:</td><td>{{allInfo['bidSize']}}</td></tr>
+            </table>
+            <div class="text-left" style="width: 50%" *ngIf="allInfo['flag']==false">
+            </div>
+          </div>
+          <div class="descriptionPart">
+            <h3>Company's Description</h3>
+            <p class="text-left">Start Date: {{allInfo['startDate']}}</p>
+            <p class="text-left">{{allInfo['description']}}</p>
+          </div>
+        </div>
+        <div class="col-sm-6" >
+          <highcharts-chart
+            [Highcharts]="Highcharts1"
+            [constructorType]="'stockChart'"
+            [options]="chartOptions"
+            [(update)] = "updateFlag"
+            style="display: inline-block; width:100%; height: 430px; margin-top: 3%">
+          </highcharts-chart>
+        </div>
+      </div>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Top News">
+      <div style="width: 100%;display: flex; flex-wrap: wrap; overflow: hidden" >
+      <div *ngFor="let news of allInfo['news']" class="col-lg-6">
+        <app-news-card class="col-sm" [news]="news"></app-news-card>
+      </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Charts">
+      <ng-template matTabContent>
+        <div class="col-md-11 col-12 justify-content-center" style="display: inline-block">
+          <highcharts-chart
+          [Highcharts]="Highcharts2"
+          [constructorType]="'stockChart'"
+          [options]="hisChartOptions">
+          </highcharts-chart>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+  <footer class="footer text-center"><p>Powered By Tiingo. Developed by Lisha Xu.</p></footer>
+</div>

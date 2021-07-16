@@ -1,0 +1,45 @@
+#container{
+  display: flex;
+  min-height: 94vh;
+  flex-direction: column;
+}
+
+.main{
+  flex: 1 0 auto;
+  margin: 0 auto;
+}
+
+.footer{
+  bottom: 0;
+  height:50px;
+  background-color: rgb(221,221,221);
+  width: 100%;
+  display: table;
+  flex: 0 0 auto;
+}
+.footer p{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h1{
+  font-family: "Lucida Grande", sans-serif;
+  margin-top: 50px;
+  font-size: 35px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+::ng-deep .mat-typography{
+  min-height: 94vh;
+}
+
+.alert{
+  height:40px;
+  color: rgb(81,87,110);
+}
+
+.alert p{
+  font-size: 0.9em;
+  margin-top: 0;
+}

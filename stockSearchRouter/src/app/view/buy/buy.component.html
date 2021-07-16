@@ -1,0 +1,20 @@
+  <div class="modal-header">
+    <h3 class="modal-title">{{allInfo['ticker']}}</h3>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <p style="margin-left: 10px">Current Price:&nbsp;{{allInfo['last']}}</p>
+      <form>
+        <div class="row">
+          <label class="col-form-label" for="quantity">Quantity&nbsp;</label>
+          <input type="number" class="form-control  col-11 col-lg-6" ngbAutofocus [formControl]="quantity" id="quantity" min="0" max="inf" step="1"/>
+        </div>
+      </form>
+  </div>
+  <div class="modal-footer justify-content-between">
+    <p>Total: {{(allInfo['last']*quantity.value) |  number:'0.2-2'}}</p>
+    <button [disabled]="quantity.value<=0" type="button" class="btn btn-success" (click)="activeModal.close();store()">Buy</button>
+  </div>
+

@@ -1,0 +1,15 @@
+/*.form-control{*/
+/*  width: 45%;*/
+/*}*/
+.btn{
+  width: 55px;
+  font-size: 15px;
+}
+
+.row{
+  margin-left: 10px;
+  margin-top: 0px;
+}
+p{
+  margin-bottom: 0;
+}

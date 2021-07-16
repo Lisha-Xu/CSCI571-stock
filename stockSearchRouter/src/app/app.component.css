@@ -1,0 +1,42 @@
+#navBar{
+  color: rgb(230,215,244);
+  background-color: rgb(111,79,251);
+  width: 100%;
+  height: auto;
+}
+.navbar-brand{
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Lucida Grande",sans-serif;
+}
+
+#navBar a{
+  color: rgb(227,208,244);
+}
+ul{
+  list-style-position: inside;
+}
+
+li{
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  text-align: right;
+  color: rgb(176,152,251);
+  outline: none;
+  font-size: 13px;
+  font-family: "Lucida Grande",sans-serif;
+}
+
+li:hover{
+  color: rgb(227,200,255);
+  cursor: pointer;
+}
+
+.nav-item.active{
+  display: inline-block;
+  color: rgb(230, 215, 244);
+  border: 2px solid rgb(230, 215, 244);
+  border-radius: 14px;
+  cursor: pointer;
+}
+

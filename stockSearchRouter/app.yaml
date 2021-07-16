@@ -1,0 +1,8 @@
+runtime: python37
+
+handlers:
+- url: /
+  static_files: dist/stockSearchRouter/index.html
+  upload: dist/stockSearchRouter/index.html
+- url: /
+  static_dir: dist/stockSearchRouter/

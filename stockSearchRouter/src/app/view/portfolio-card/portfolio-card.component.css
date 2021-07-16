@@ -1,0 +1,52 @@
+.card{
+  margin-top: 1%;
+  margin-bottom: 20px;
+}
+
+.card-header{
+  cursor: pointer;
+  width: 100%;
+  padding-left: 15px;
+  padding-top: 17px;
+  padding-bottom: 15px;
+}
+
+.title{
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.name{
+  font-family: "Lucida Grande", sans-serif;
+  margin-left: 10px;
+  color: rgb(113,121,130);
+  font-size:1.5em;
+  font-weight: bold;
+}
+
+.card-body{
+  font-family: "Lucida Grande", sans-serif;
+  padding-top: 10px;
+  width: 100%;
+  padding-right: 0px;
+  font-size: 18px;
+}
+
+td{
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.btn{
+  margin-left: 22px;
+  width: 55px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.card-footer{
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-right: 20px;
+}
