@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F4F2F4</color>
+    <color name="colorGrey">#F4F2F4</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#B69CD2</color>
+
+    <color name="colorLine">#C9C8C9</color>
+    <color name="btninvalid">#808080</color>
+    <color name="colorBlack">#000000</color>
+
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="trendingColor">#329A5D</color>
+    <color name="splash">#03DAC5</color>
+    <color name="sectionTabColor">#03DAC5</color>
+    <color name="item_selected_background_color">#03DAC5</color>
+    <color name="app_background_color">#03DAC5</color>
+    <color name="trendingSearch">#03DAC5</color>
+
+    <color name="colorCongratulation">#319A5C</color>
+</resources>
