@@ -1,0 +1,58 @@
+body{
+    background-color: #6060A9;
+    font-family: Arial;
+}
+#general{
+    margin-left: 200px;
+    margin-top:50px;
+    width: 920px;
+}
+#searchBox{
+    background-color: #E8E8E8;
+    height: 255px;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#searchValue{
+    border: transparent;
+    height: 20px;
+    width: 150px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+h1{
+    padding-top: 55px;
+}
+hr{
+    margin-top: 15px;
+    background-color:#dcdce5;
+    color: #dcdce5;
+}
+button{
+    border: 1px transparent;
+    width: 100px;
+    height: 30px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    text-align: center;
+    margin-right:20px;
+    margin-left: 20px;
+}
+
+button:hover{
+    background-color: #c0c0c0;
+}
+
+#choiceButton{
+    margin-top: 38px;
+    text-align: center;
+}
+
+#Error{
+    text-align: center;
+    margin: 30px auto;
+    font-weight: 600;
+}

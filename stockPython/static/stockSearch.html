@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Search</title>
+        <link rel="stylesheet" href="static/stockSearch.css" type="text/css">
+        <script defer src="static/stockSearch.js"></script>
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    </head>
+    <body>
+        <div id="general">
+            <div id="searchBox">
+                <h1>Stock Search</h1>
+                <form id="form" autocomplete="off">
+                    <label for="searchValue">Enter Stock Ticker Symbol&nbsp;<span style="color:red;">*</span>&nbsp;</label>
+                    <input type="text" name="searchValue" id="searchValue" required />
+                    <div id="choiceButton">
+                        <button id="search" type="submit">Search</button>
+                        <button id="clear" type="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div id="contentChoice"></div>
+            <div id="outLook"></div>
+            <div id="stockSummary" style="display:none"></div>
+            <div id="charts" style="display:none"></div>
+            <div id="news" style="display:none"></div>
+        </div>
+    </body>
+</html>
